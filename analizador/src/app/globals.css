@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+#file-upload {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#file-input {
+  margin-right: 10px;
+}
+
+#upload-button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#results {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#tokens-output {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
