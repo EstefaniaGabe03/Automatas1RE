@@ -143,5 +143,5 @@ async function readFalse(reader, buffer, tokens){
     }
     tokens.push({type: currentTokenType, value: buffer});
     buffer = "";
-    currentChar = await reader.read();
+    currentChar = await reader.read(); 
 }

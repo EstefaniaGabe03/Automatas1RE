@@ -1,15 +1,14 @@
+'use client'
 import React from 'react';
 
 export default function Home() {
   return (
-    <div>
-      <h1 >
-        Analizador de Archivos .JSON
-      </h1>
-      <p>
-        Estefanía García Beltrán
-      </p>
-    </div>
+<div style={{textAlign:'center'}}>
+<h1>Analizador léxico JSON</h1>
+<h2>Analizar texto</h2>
+<p>Estefanía García Beltrán</p>
+
+</div>
   )
-}
+} 
 
