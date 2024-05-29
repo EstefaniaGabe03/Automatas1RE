@@ -28,6 +28,5 @@ Validar la semántica de los datos JSON, como el formato de fechas, el rango de 
 - **Visualización mejorada:**
 Desarrollar una interfaz de usuario más interactiva para mostrar los resultados de analisis, incluyendo resaltado de sintaxis, etc.
 
-## Inline code
-
-This web site is using `markedjs/marked`.
+#### Compromiso
+Para el siguiente semestre me compromento a tener el codigo y función completo, junto con la interfaz de usuario funcionando...
