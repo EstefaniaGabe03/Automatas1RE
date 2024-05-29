@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Asignación de Tokens
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Flujo del código
 
-## Available Scripts
+# Funcionalidad
+1. Importación e inicializacion de las variables
+2. Manejo de la entrada de archivos
+3. Funcion de _*validacionYasignacion*_ toma el archivo como entrada, despúes crea un objeto FileReader, que permite leer el contenido del archivo.
+4. Funcion _*validacionJSONtokens*_ lee el contenido del archivo carácter por carácter, realiza un seguimiento del carácter actual y un búfer para acumular caracteres para la creación de tokens; itera el contenido del archivo, realizando las siguientes acciones para cada caracter:
+- Omite los caracteres de espacio en blanco.
+- Identifica el tipo de token en función del carácter (llaves, corchetes, coma, dos puntos, comillas para cadenas, etc.).
+- Para las cadenas, lee caracteres hasta encontrar la comilla de cierre, manejando las secuencias de escape (\) adecuadamente.
+- Para palabras clave como null, true y false, verifica la secuencia de caracteres para asegurarse de que sean válidas.
 
-In the project directory, you can run:
+En esencia, el código toma un archivo JSON como entrada, lo lee carácter por carácter, identifica los diferentes elementos JSON (tokens) y construye una lista de tokens que representan la estructura de los datos JSON.  
 
-### `npm start`
+## Alcance del código
+### Funciones específicas
+* **Lectura de archivos JSON:** El código puede leer archivos JSON desde el sistema de archivos local del usuario.
+* **Tokenización:** Analiza el contenido del archivo JSON y lo divide en tokens individuales, identificando elementos como llaves, corchetes, comas, dos puntos, cadenas, valores numéricos, palabras clave null, true y false.
+* **Validación básica:** Realiza una validación básica de la sintaxis JSON, como verificar si las llaves están equilibradas y si las palabras clave null, true y false se escriben correctamente.
+* **Salida (asumida):** Pudo haber mostrado la presentacion tokenizada del archivo JSON en la interfaz de usuario, lo que hubiera facilitado la comprension de la estructura del archivo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### *Proyección del código*
+El código podría ampliarse para aumentar su funcionalidad y alcance:
+- **Validacion semántica:**
+Validar la semántica de los datos JSON, como el formato de fechas, el rango de valores númericos y las relaciones entre objetos.
+- **Visualización mejorada:**
+Desarrollar una interfaz de usuario más interactiva para mostrar los resultados de analisis, incluyendo resaltado de sintaxis, etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Inline code
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This web site is using `markedjs/marked`.
